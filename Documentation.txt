@@ -1,0 +1,38 @@
+Model Architecture
+The implemented neural network model for classifying handwritten digits from the MNIST dataset consists of three fully connected (dense) layers:
+
+Input Layer: This layer has 784 neurons, corresponding to the 28x28 pixels in the input images. Each neuron represents a pixel value.
+
+Hidden Layer 1: This layer has 128 neurons and applies a ReLU (Rectified Linear Unit) activation function. It processes the features extracted from the input image.
+
+Hidden Layer 2: This layer has 64 neurons with a ReLU activation function. It further refines the features learned from the previous layer.
+
+Output Layer: This layer has 10 neurons, each representing a digit from 0 to 9. It performs the final classification using softmax activation.
+
+Training Process
+Data Loading and Preprocessing: The MNIST dataset is loaded and preprocessed. Each image is normalized to have values in the range [-1, 1].
+
+Model Initialization: The neural network model is initialized with the specified architecture.
+
+Loss Function and Optimizer: Cross-entropy loss is used as the loss function, and the Adam optimizer is employed for optimization.
+
+Training Loop: The model is trained for 5 epochs. In each epoch, the training data is iterated over in batches. For each batch:
+
+The optimizer's gradients are zeroed.
+Forward pass: The input images are fed forward through the network to obtain predictions.
+Loss computation: The loss between the predicted and actual labels is calculated.
+Backward pass: Gradients are computed and backpropagated through the network.
+Optimizer step: The optimizer updates the model parameters based on the computed gradients.
+Model Evaluation: After training, the model is evaluated on the test dataset. The accuracy of the model on the test set is calculated.
+
+Results
+After training the model for 5 epochs, the accuracy of the network on the test set was found to be approximately 97.5%. This indicates that the model performs well in classifying handwritten digits from the MNIST dataset.
+
+Visualization Interface
+To use the visualization interface:
+
+Visualizing Weights: Run the code provided to visualize the weights of the first layer. This will display 128 plots, each showing the weights of one neuron in the first layer. Observe how these weights change during training.
+
+Digit Classification Interface: Launch the Gradio interface provided in the code. It allows users to draw digits on a sketchpad, and the model will predict the digit drawn. Simply draw a digit on the sketchpad, and the predicted digit will be displayed as output.
+
+By following these instructions, you can explore the model architecture, training process, and interact with the trained model through the visualization interface.
